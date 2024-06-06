@@ -1,8 +1,8 @@
 'use client'
+
 import Form from '@components/Form';
-import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import { useSearchParams,useRouter } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react'
 
 
 const UpdatePrompt = () => {
@@ -57,4 +57,12 @@ const UpdatePrompt = () => {
     )
 }
 
-export default UpdatePrompt
+const Page = () => {
+    return (
+      <Suspense>
+        <UpdatePrompt/>
+      </Suspense>
+    )
+  }
+  
+  export default Page
